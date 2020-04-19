@@ -1,8 +1,10 @@
-package com.vinireis.renomeararquivos.service;
+package com.vinireis.renomeararquivos.service.builders;
 
 import java.nio.file.Path;
 
 import org.springframework.stereotype.Service;
+
+import com.vinireis.renomeararquivos.service.NomeArquivoAlura;
 
 @Service
 public class BuilderAluraPDF implements BuilderNomeArquivo {

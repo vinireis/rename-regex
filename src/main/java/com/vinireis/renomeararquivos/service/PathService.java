@@ -5,6 +5,9 @@ import java.nio.file.Paths;
 
 import org.springframework.stereotype.Service;
 
+import com.vinireis.renomeararquivos.service.builders.BuilderNomeArquivo;
+import com.vinireis.renomeararquivos.service.builders.BuilderNomeArquivoStrategy;
+
 @Service
 public class PathService {
 	private BuilderNomeArquivoStrategy builderNomeArquivoStrategy;
