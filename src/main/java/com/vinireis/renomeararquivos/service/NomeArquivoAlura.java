@@ -2,19 +2,19 @@ package com.vinireis.renomeararquivos.service;
 
 public class NomeArquivoAlura {
 	private NomeArquivoAlura(Builder builder) {
-		this.numeroAlura = adicionaZero(builder.numeroAlura);
+		this.numeroAula = adicionaZero(builder.numeroAula);
 		this.numeroAtividade = adicionaZero(builder.numeroAtividade);
 		this.nomeAula = builder.nomeAula;
 		this.extensao = builder.extensao;
 	}
 
-	private String numeroAlura;
+	private String numeroAula;
 	private String numeroAtividade;
 	private String nomeAula;
 	private String extensao;
 
 	public String getNumeroAlura() {
-		return numeroAlura;
+		return numeroAula;
 	}
 
 	public String getNumeroAtividade() {
@@ -30,7 +30,7 @@ public class NomeArquivoAlura {
 	}
 	
 	public String toString() {
-		return this.numeroAlura + " " + this.numeroAtividade + " - " + this.nomeAula + this.extensao;
+		return this.numeroAula + " " + this.numeroAtividade + " - " + this.nomeAula + this.extensao;
 	}
 
 	private String adicionaZero(String numero) {
@@ -38,13 +38,13 @@ public class NomeArquivoAlura {
 	}
 
 	public static class Builder {
-		private String numeroAlura;
+		private String numeroAula;
 		private String numeroAtividade;
 		private String nomeAula;
 		private String extensao;
 
-		public Builder numeroAlura(String numeroAlura) {
-			this.numeroAlura = numeroAlura;
+		public Builder numeroAula(String numeroAula) {
+			this.numeroAula = numeroAula;
 			return this;
 		}
 
@@ -66,6 +66,5 @@ public class NomeArquivoAlura {
 		public NomeArquivoAlura build() {
 			return new NomeArquivoAlura(this);
 		}
-
 	}
 }

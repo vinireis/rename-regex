@@ -8,7 +8,7 @@ import com.vinireis.renomeararquivos.service.NomeArquivoAlura;
 
 @Service
 public class BuilderAluraPDF implements BuilderNomeArquivo {
-	private static final String REGEX_PDF_ALURA = ".*_ Aula (\\d{1,2}) - Atividade (\\d{1,2}) (.*) _.*.pdf";
+	private static final String REGEX_PDF_ALURA = ".*Aula (\\d{1,2}) - Atividade (\\d{1,2}) (.*) _.*.pdf";
 
 	@Override
 	public String getRegex() {
@@ -18,7 +18,7 @@ public class BuilderAluraPDF implements BuilderNomeArquivo {
 	@Override
 	public String build(Path antigoNomeArquivo) {
 		return new NomeArquivoAlura.Builder()
-		.numeroAlura(antigoNomeArquivo.toString().replaceAll(REGEX_PDF_ALURA, "$1"))
+		.numeroAula(antigoNomeArquivo.toString().replaceAll(REGEX_PDF_ALURA, "$1"))
 		.numeroAtividade(antigoNomeArquivo.toString().replaceAll(REGEX_PDF_ALURA, "$2"))
 		.nomeAula(antigoNomeArquivo.toString().replaceAll(REGEX_PDF_ALURA, "$3"))
 		.extensao(".pdf")
