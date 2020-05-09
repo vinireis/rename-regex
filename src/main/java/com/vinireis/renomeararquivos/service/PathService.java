@@ -23,4 +23,8 @@ public class PathService {
 		String novoNomeArquivo = builderNomeArquivo.build(antigoNomeArquivo);
 		return Paths.get(diretorioPai.toString(), novoNomeArquivo);
 	}
+	
+	public Path getNovoPath(Path antigoPath,Path novoDiretorio) {
+		return Paths.get(novoDiretorio.toString(), antigoPath.getFileName().toString());
+	}
 }

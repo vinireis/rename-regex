@@ -25,6 +25,6 @@ public class GerenciadorDeArquivosService {
 	public void renomeiaArquivosNo(@Valid @NotNull String diretorio) throws IOException {
 		log.info("Os arquivos do diretório {} serão renomeados!", diretorio);
 		Stream<Path> arquivosDoDiretorio = diretorioService.getArquivosDoDiretorio(diretorio);
-		arquivosDoDiretorio.forEach(p -> renomeador.renomeia(p));
+		arquivosDoDiretorio.forEach(p -> renomeador.renomeia(p,diretorio));
 	}
 }

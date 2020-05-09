@@ -24,6 +24,20 @@ public class DiretorioService {
 		}
 	}
 
+	public Stream<Path> getDiretoriosDoDiretorio(String diretorio) {
+		try {
+			Path pathDiretorio = Paths.get(diretorio);
+			if (isDirectory(pathDiretorio)) {
+				log.info("É um diretorio");
+				return Files.list(pathDiretorio).filter(p -> isDirectory(p));
+			} else {
+				throw new IllegalArgumentException("O diretorio passado não existe!");
+			}
+		} catch (IOException e) {
+			throw new IllegalArgumentException("O diretorio passado não existe!");
+		}
+	}
+
 	private boolean isDirectory(Path pathDiretorio) {
 		return Files.isDirectory(pathDiretorio, LinkOption.NOFOLLOW_LINKS);
 	}
